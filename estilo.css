@@ -1,0 +1,87 @@
+/*
+Cores
+
+50a240 vd claro
+2a5521 vd escuro
+1e76b1 az claro
+114264 az escuro
+*/
+
+body{
+    margin: 0;
+    font-family: 'Poppins', 'Helvetica', sans-serif;;
+}
+
+/* Header */
+
+div#logo span{
+    font-size: 2em;
+    font-weight: 800;
+}
+
+/*Main*/
+
+main{
+    padding: 1em;
+    background-image: linear-gradient(#cccccc,#ffffff);
+}
+
+/*Links e botões*/
+a.botao,
+input[type="button"],
+input[type="submit"] {
+    background-color: #50a240;
+    color: white;
+    font-weight: 600;
+    font-family: "poppins";
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a.botao:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: #2a5521;
+}
+
+input, select, a.botao {
+    font-size: 1em;
+}
+
+input[type="button"],
+input[type="submit"]{
+    height: 2em;
+}
+
+a.botao{
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+}
+
+a.excluir, #cancelar, #logout{
+    background-color: rgb(178, 0, 0);
+}
+
+a.excluir:hover, #cancelar:hover{
+    background-color: rgb(115, 0, 0);
+}
+
+/*Formulário*/
+
+form label::after{
+    content: ":";
+}
+
+/*Agrupados*/
+
+footer, header{
+    background-color: #114264;
+    color: white;
+}
+
+footer a,header a{
+    color: aqua;
+}
