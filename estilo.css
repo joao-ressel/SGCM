@@ -9,14 +9,46 @@ Cores
 
 body{
     margin: 0;
-    font-family: 'Poppins', 'Helvetica', sans-serif;;
+    font-family: 'Poppins', 'Helvetica', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
+
 /* Header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+}
+
+div#logo{
+    margin: auto 0;
+}
+
+div#logo *{
+    vertical-align: middle;
+    margin-left: 0.5em;
+}
 
 div#logo span{
     font-size: 2em;
     font-weight: 800;
+}
+
+div#usuarioInfo span, footer span{
+    display: block;
+    margin-bottom: auto;
+}
+div#usuarioInfo{
+    text-align: right;
+}
+
+div#usuarioInfo a.botao{
+    border: 1px solid white;
+    background-color:#114264;
 }
 
 /*Main*/
@@ -24,6 +56,59 @@ div#logo span{
 main{
     padding: 1em;
     background-image: linear-gradient(#cccccc,#ffffff);
+}
+
+/* NAV */
+
+nav ul li{
+    display: inline-block;
+    justify-content: space-between;
+}
+
+/*Tabela*/
+
+table{
+    width: 100%;
+    border-spacing: 0.1em;
+    margin: 0.5em auto;    
+}
+
+table th{
+    background-color: #114264;
+    color: white;
+}
+
+table tr, table td{
+    padding: 0.5em;
+    text-align: center;
+}
+
+table tbody tr:nth-child(odd){
+    background-color: #c6d4e2;
+}
+
+table tbody tr:hover{
+    background-color: #1e76b1;
+}
+
+table tfoot td {
+    text-align: center;
+    /*background-color: #114264;
+    color: white;*/
+    border-top: 3px solid #114264;
+}
+
+table tbody td:last-child, table tbody td.fit{
+    width: 1%;
+    white-space: nowrap;
+}
+
+/*Comandos*/
+
+div#comandos{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
 }
 
 /*Links e botões*/
@@ -36,6 +121,7 @@ input[type="submit"] {
     font-family: "poppins";
     border-radius: 4px;
     cursor: pointer;
+    border: none;
 }
 
 a.botao:hover,
@@ -61,27 +147,67 @@ a.botao{
     box-sizing: border-box;
 }
 
-a.excluir, #cancelar, #logout{
+a.excluir, #cancelar{
     background-color: rgb(178, 0, 0);
 }
-
+a.botao#add{
+    background-color: #114264;
+}
 a.excluir:hover, #cancelar:hover{
     background-color: rgb(115, 0, 0);
 }
 
 /*Formulário*/
 
+form{
+    margin: auto;
+    width: fit-content;
+    text-align: right;
+}
+form h2{
+    text-align: center;
+    color: #2a5521;
+}
+form div.grid{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 form label::after{
     content: ":";
 }
 
-/*Agrupados*/
+input, select{
+    height: 2em;
+    border: 1px solid #757575;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
+form div.grid input,
+form div.grid select{
+    width: 18em;
+}
+
+input:invalid,
+select:invalid{
+    border: 1px solid red;
+}
+
+/*footer e header*/
+
+footer{
+    text-align: center;
+    margin-top: auto;
+}
 footer, header{
     background-color: #114264;
     color: white;
+    padding: 0.5em;
 }
 
 footer a,header a{
-    color: aqua;
+    color: inherit;
 }
