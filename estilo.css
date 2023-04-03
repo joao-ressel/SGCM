@@ -259,6 +259,11 @@ form div.grid select{
     width: 18em;
 }
 
+#dataNascimento{
+    width: 22.2em;
+}
+
+
 input:invalid,
 select:invalid{
     border: 1px solid red;
@@ -273,7 +278,7 @@ select:invalid{
         grid-template-columns: 1fr;
         text-align: left;
     }
-    form div.grid input, form div.grid select{
+    form div.grid input, form div.grid select, #dataNascimento{
         width: 100%;
     }
 }

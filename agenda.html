@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+        <title>SGCM - Agenda</title>
+        <link rel="stylesheet" href="estilo.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <header>
+            <div id="logo">
+                <img src="imagens/logo.png" alt="logo SGCM" width="50">
+                <span id="titulo">SGCM</span>
+            </div>
+
+            <div id="usuarioInfo">
+                <span>Usuário: admin</span>
+                <span>Papel: Administrador</span>
+                <a href="javascript:void(0)" class="botao">Logout</a>
+            </div>
+            
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="atendimento.html">Atendimento</a></li>
+                <li><a href="pacientes.html">Pacientes</a></li>
+                <li><a href="profissionais.html">Profissionais</a></li>
+                <li><a href="convenios.html">Convênios</a></li>
+                <li id="dropdown">
+                    <a href="javascript:void(0)">Configurações
+                        <span>
+                            &#9660;
+                        </span>
+                    </a>
+                    <div id="dropdown_menu">
+                        <a href="usuarios.html">Usuários</a>
+                        <a href="especialidades.html">Especialidades</a>
+                        <a href="unidades.html">Unidades</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <form action="#" id="formCadastro">
+                <h2>Agendamento</h2>
+
+                <div class="grid">
+
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" required>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" >
+
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" name="telefone" id="telefone" >
+
+                    <label for="dataAgendamento" class="data">Data</label>
+                    <input type="date" name="dataAgendamento" id="dataAgendamento" >
+
+                    <label for="horario">Horário</label>
+                    <input type="time" name="horario" id="horario" >
+
+                    <label for="status">Status</label>
+                    <input type="string" name="status" id="status" >
+
+                </div>
+
+                <input type="submit" value="Agendar" class="botao">
+                <input type="button" value="Cancelar" id="cancelar" class="botao">
+
+                
+            </form>
+        </main>
+
+        <footer>
+            <span>SGCM - Sistema de Gerenciamento de Clínica Médica</span>
+            <span>Suporte Técnino: (99) 99999-9999 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
+        </footer>
+
+    </body>
+</html>
