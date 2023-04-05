@@ -21,28 +21,29 @@ body{
 
 header{
     display: flex;
-    justify-content: space-between;
-    padding: 0.5em;
     flex-wrap: wrap;
-
+    justify-content: space-between;
 }
 
 div#logo{
     margin: auto 0;
 }
 
-div#logo *{
+div#logo img{
     vertical-align: middle;
-    margin-left: 0.5em;
+    margin-left: 2em;
 }
 
 div#logo span{
     font-size: 2em;
+    vertical-align: middle;
+    margin-left: 0.5em;
     font-weight: 800;
 }
 
 div#usuarioInfo{
     text-align: right;
+    justify-content: space-between;
 }
 
 div#usuarioInfo a.botao{
@@ -50,9 +51,33 @@ div#usuarioInfo a.botao{
     background-color:#2A5C72;
 }
 
-div#usuarioInfo span, footer span{
-    display: block;
+div#usuarioInfo{
+    display: inline-block;
     margin-bottom: auto;
+}
+
+div#usuarioInfo span{
+    display: block;
+}
+
+div.user-header{
+    margin-top: 1em;
+    margin-right: 2em;
+}
+.saida{
+    display:inline-block;
+}
+
+.user-nome{
+    font-weight: 500;
+}
+.user-papel{
+    font-weight: 300;
+}
+
+.botao.icone{
+    width: 2em;
+    color: white;
 }
 
 @media screen and (max-width:360px) {
@@ -71,43 +96,39 @@ main{
 }
 
 /* NAV */
-
 nav{
-    background-color: #1e76b1;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+ display: block;
+ margin-bottom: 1em;
 }
 
 nav ul{
-    margin: 0;
+    margin-bottom: 0;
     padding: 0;
     justify-content: center;
 }
 
 nav ul li{
     display: inline-block;
-    justify-content: space-between;
     
 }
 
 nav ul li a{
+    font-weight: 500;
     color: white;
     text-decoration: none;
-    font-weight: 500;
     padding: 1em;
     display: inline-block;
+
 }
 nav ul li a:hover{
-    background-color: #114264;
+    color: #9ccff1;
 }
 
 nav div#dropdown_menu{
     display: none;
     position: absolute;/*saindo da hierarquia deposição*/
-    background-color: #1e76b1;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+    background-color: #2A5C72;
+    
 }
 nav ul li#dropdown:hover div#dropdown_menu{
     display: block;
@@ -130,32 +151,44 @@ nav div#dropdown_menu a{
 
 /*Tabela*/
 
+div.box-tabela{
+    width: 90%;
+    height: 60%;
+    padding: 1em;
+    background: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    margin: 5em;
+    
+}
+
 table{
     width: 100%;
     border-spacing: 0.1em;
-    margin: 0.5em auto;    
+    margin: 1em auto;    
     /*Responsivo*/
     display: block;
     overflow-x: auto;
+
+}
+
+table, tr, td{
+    border: 0px;
 }
 
 table th{
-    background-color: #2A5C72;
-    color: white;
+    background-color: #EEF5FF;
+    border-radius: 5px;
+    
 }
+
 
 table tr, table td{
     padding: 0.5em;
     text-align: center;
 }
 
-table tbody tr:nth-child(odd){
-    background-color: #c6d4e2;
-}
-
-table tbody tr:hover{
-    background-color: #1e76b1;
-}
 
 table tfoot td {
     text-align: center;
@@ -260,6 +293,7 @@ a.botao.finalizar {
 /*Formulário*/
 
 form{
+    display: none;
     margin: auto;
     width: fit-content;
     text-align: right;
@@ -330,9 +364,14 @@ footer{
     margin-top: auto;
 }
 footer, header{
-    background-color: #114264;
+    background-color: #2A5C72;
     color: white;
     padding: 0.5em;
+    
+}
+footer span{
+    margin-bottom: auto;
+    display: block;
 }
 
 footer a,header a{
