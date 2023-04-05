@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta name="viewport" content="width=device-width,user-scalable=no">
-        <title>SGCM - Convenios</title>
+        <title>SGCM - Convênios</title>
         <link rel="stylesheet" href="estilo.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,61 +45,56 @@
                 </li>
             </ul>
         </nav>
-
         <main>
-
             <form action="#" id="formCadastro">
-                <h2>Convênios</h2>
 
                 <div class="grid">
 
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" required>
+                    <input type="text" name="nome" id="nome">
 
                     <label for="razaoSocial">Razão Social</label>
-                    <input type="text" name="registroConcelho" id="razaoSocial" required>
+                    <input type="text" name="razaoSocial" id="razaoSocial" required>
 
                     <label for="cnpj">CNPJ</label>
-                    <input type="number" name="cnpj" id="cnpj" >
+                    <input type="text" name="cnpj" id="cnpj" required>
 
                     <label for="representante">Representante</label>
-                    <input type="text" name="representante" id="representante" >
+                    <input type="text" name="representante" id="representante" required>
 
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" >
+                    <input type="text" name="email" id="email" required>
 
                     <label for="telefone">Telefone</label>
-                    <input type="tel" name="telefone" id="telefone" >
-                    
+                    <input type="text" name="telefone" id="telefone" required>
+
                     <label for="ativo">Ativo</label>
-                    <select name="ativo" id="ativo" required>
-                        <option value="1">Sim</option>
-                        <option value="2">Não</option>
-                    </select>
+                    <input type="checkbox" name="ativo" id="ativo">
+
                 </div>
 
-                <input type="submit" value="Salvar" class="botao">
-                <input type="button" value="Cancelar" id="cancelar" class="botao">
+                <input type="button" value="Cancelar">
+                <input type="submit" value="Salvar">
 
-                
             </form>
-
             <div id="comandos">
+                <a href="javascript:void(0)"
+                   id="add"
+                   class="botao">Adicionar</a>
                 <div>
                     <form action="">
                         <label for="busca">Busca</label>
                         <input type="search" name="busca" id="busca">
                     </form>
                 </div>
-                <a href="javascript:void(0)" id="add" class="botao">Adicionar</a>
             </div>
-
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Razão Social</th>
+                        <th>CNPJ</th>
                         <th>Representante</th>
                         <th>E-mail</th>
                         <th>Telefone</th>
@@ -111,10 +106,11 @@
                     <tr>
                         <td class="fit">1</td>
                         <td>Unimed</td>
-                        <td>CENTRAL NACIONAL UNIMED - COOPERATIVA CENTRAL </td>
-                        <td>Unimed Rio Branco</td>
-                        <td>relacionamento.socias@centralnacionalunimed.com.br</td>
-                        <td>(68) 2106-4510</td>
+                        <td>Unimed Rio Branco Cooperativa de Trabalho Médico Ltda.</td>
+                        <td>46.560.030/0001-53</td>
+                        <td>Thayline Figueredo Vaz</td>
+                        <td>contato@unimedriobranco.com.br</td>
+                        <td>(68) 3668-1546</td>
                         <td>Sim</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
@@ -123,11 +119,12 @@
                     </tr>
                     <tr>
                         <td class="fit">2</td>
-                        <td>Unimed</td>
-                        <td>CENTRAL NACIONAL UNIMED - COOPERATIVA CENTRAL </td>
-                        <td>Unimed Rio Branco</td>
-                        <td>relacionamento.socias@centralnacionalunimed.com.br</td>
-                        <td>(68) 2106-4510</td>
+                        <td>Amil</td>
+                        <td>AMIL ASSISTENCIA MEDICA INTERNACIONAL S.A.</td>
+                        <td>29.309.127/0001-79</td>
+                        <td>Davi Faria da Conceição</td>
+                        <td>contato@amil.com.br</td>
+                        <td>(11) 3279-3035</td>
                         <td>Sim</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
@@ -136,37 +133,12 @@
                     </tr>
                     <tr>
                         <td class="fit">3</td>
-                        <td>Unimed</td>
-                        <td>CENTRAL NACIONAL UNIMED - COOPERATIVA CENTRAL </td>
-                        <td>Unimed Rio Branco</td>
-                        <td>relacionamento.socias@centralnacionalunimed.com.br</td>
-                        <td>(68) 2106-4510</td>
-                        <td>Sim</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">4</td>
-                        <td>Unimed</td>
-                        <td>CENTRAL NACIONAL UNIMED - COOPERATIVA CENTRAL </td>
-                        <td>Unimed Rio Branco</td>
-                        <td>relacionamento.socias@centralnacionalunimed.com.br</td>
-                        <td>(68) 2106-4510</td>
-                        <td>Sim</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">5</td>
-                        <td>Unimed</td>
-                        <td>CENTRAL NACIONAL UNIMED - COOPERATIVA CENTRAL </td>
-                        <td>Unimed Rio Branco</td>
-                        <td>relacionamento.socias@centralnacionalunimed.com.br</td>
-                        <td>(68) 2106-4510</td>
+                        <td>Bradesco</td>
+                        <td>BRADESCO SAUDE S.A.</td>
+                        <td>92.693.118/0001-60</td>
+                        <td>Leandra Paes dos Anjos</td>
+                        <td>contato@bradescosaude.com.br</td>
+                        <td>(21) 2503-0787</td>
                         <td>Sim</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
@@ -176,16 +148,14 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="8">Total de registros: 5</td>
+                        <td colspan="9">Total de registros: 5</td>
                     </tr>
                 </tfoot>
             </table>
         </main>
-
         <footer>
             <span>SGCM - Sistema de Gerenciamento de Clínica Médica</span>
-            <span>Suporte Técnino: (99) 99999-9999 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
+            <span>Suporte técnico: (68) 5555-5555 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
         </footer>
-
     </body>
 </html>

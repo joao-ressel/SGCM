@@ -13,6 +13,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: #EEF5FF;
 }
 
 
@@ -46,7 +47,7 @@ div#usuarioInfo{
 
 div#usuarioInfo a.botao{
     border: 1px solid white;
-    background-color:#114264;
+    background-color:#2A5C72;
 }
 
 div#usuarioInfo span, footer span{
@@ -139,7 +140,7 @@ table{
 }
 
 table th{
-    background-color: #114264;
+    background-color: #2A5C72;
     color: white;
 }
 
@@ -160,7 +161,7 @@ table tfoot td {
     text-align: center;
     /*background-color: #114264;
     color: white;*/
-    border-top: 3px solid #114264;
+    border-top: 3px solid #2A5C72;
 }
 
 table tbody td:last-child, table tbody td.fit{
@@ -218,13 +219,44 @@ a.botao{
 a.excluir, #cancelar{
     background-color: rgb(178, 0, 0);
 }
-a.botao#add{
+a.botao#add, a.botao.azul{
     background-color: #114264;
 }
 a.excluir:hover, #cancelar:hover{
     background-color: rgb(115, 0, 0);
 }
+a.botao.confirmacao,
+a.botao.chegada,
+a.botao.iniciar,
+a.botao.finalizar {
+    width: 6.5em;
+}
 
+a.botao.confirmacao {
+    background-color: #f1ff70;
+    color:sienna;
+}
+
+a.botao.confirmacao:hover {
+    background-color: #d5ee31;
+    color:sienna;
+}
+
+a.botao.chegada {
+    background-color: #f5c62d;
+}
+
+a.botao.chegada:hover {
+    background-color: #b5a40f;
+}
+a.botao.inativo {
+    display: none;
+}
+
+a.botao.iniciar,
+a.botao.finalizar {
+    width: 5.5em;
+}
 /*Formulário*/
 
 form{
@@ -281,6 +313,14 @@ select:invalid{
     form div.grid input, form div.grid select, #dataNascimento{
         width: 100%;
     }
+}
+
+form div.grid input[type="date"] {
+    font-family: inherit;
+}
+form div.grid input[type="checkbox"] {
+    margin-left: 0;
+    width: 1.25em;
 }
 
 /*footer e header*/

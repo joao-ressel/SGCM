@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta name="viewport" content="width=device-width,user-scalable=no">
-        <title>SGCM - Agenda</title>
+        <title>SGCM - Atendimento</title>
         <link rel="stylesheet" href="estilo.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,125 +45,102 @@
                 </li>
             </ul>
         </nav>
-
         <main>
-
-            <form action="#" id="formCadastro">
-                <h2>Agendamento</h2>
-
-                <div class="grid">
-
-                    <label for="nome">Nome do Paciente</label>
-                    <input type="text" name="nome" id="nome" required>
-
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" >
-
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" name="telefone" id="telefone" >
-
-                    <label for="dataAgendamento" class="data">Data</label>
-                    <input type="date" name="dataAgendamento" id="dataAgendamento" >
-
-                    <label for="horario">Horário</label>
-                    <input type="time" name="horario" id="horario" >
-
-                    <label for="status">Status</label>
-                    <select name="status" id="status" required>
-                        <option value="1">Agendado</option>
-                        <option value="2">Atendido</option>
-                    </select>
-                    
-                </div>
-
-                <input type="submit" value="Agendar" class="botao">
-                <input type="button" value="Cancelar" id="cancelar" class="botao">
-
-                
-            </form>
-
             <div id="comandos">
+                <a href="javascript:void(0)"
+                   id="add"
+                   class="botao">Adicionar</a>
                 <div>
                     <form action="">
                         <label for="busca">Busca</label>
                         <input type="search" name="busca" id="busca">
                     </form>
                 </div>
-                <a href="javascript:void(0)" id="add" class="botao">Adicionar</a>
             </div>
-            
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Hora</th>
                         <th>Paciente</th>
                         <th>Profissional</th>
-                        <th>Especialidade</th>
-                        <th>Data de Agendamento</th>
-                        <th>Horário</th>
-                        <th>Status</th>
+                        <th>Unidade</th>
+                        <th>Convênio</th>
+                        <th>Atendimento</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="fit">1</td>
-                        <td>Maria Maria Maria Maria</td>
-                        <td>Elielson Silveira Andrade</td>
-                        <td>Cardiologia</td>
-                        <td>01/05/2023</td>
-                        <td>13:30</td>
-                        <td>Agendado</td>
+                        <td class="fit">10/04/2023</td>
+                        <td class="fit">14:00</td>
+                        <td>Paciente A</td>
+                        <td>Profissional A</td>
+                        <td>Unidade A</td>
+                        <td>Unimed</td>
+                        <td>
+                            <a href="javascript:void(0)" class="botao iniciar inativo">Iniciar</a>
+                            <a href="javascript:void(0)" class="botao finalizar excluir">Finalizar</a>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="fit">2</td>
-                        <td>Maria Maria Maria Maria</td>
-                        <td>Elielson Silveira Andrade</td>
-                        <td>Cardiologia</td>
-                        <td>01/05/2023</td>
-                        <td>13:30</td>
-                        <td>Agendado</td>
+                        <td class="fit">10/04/2023</td>
+                        <td class="fit">14:30</td>
+                        <td>Paciente B</td>
+                        <td>Profissional B</td>
+                        <td>Unidade B</td>
+                        <td>Aliança</td>
+                        <td>
+                            <a href="javascript:void(0)" class="botao iniciar">Iniciar</a>
+                            <a href="javascript:void(0)" class="botao finalizar excluir inativo">Finalizar</a>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="fit">3</td>
-                        <td>Maria Maria Maria Maria</td>
-                        <td>Elielson Silveira Andrade</td>
-                        <td>Cardiologia</td>
-                        <td>01/05/2023</td>
-                        <td>13:30</td>
-                        <td>Agendado</td>
+                        <td class="fit">10/04/2023</td>
+                        <td class="fit">15:00</td>
+                        <td>Paciente C</td>
+                        <td>Profissional C</td>
+                        <td>Unidade C</td>
+                        <td>Unimed</td>
+                        <td>
+                            <a href="javascript:void(0)" class="botao iniciar">Iniciar</a>
+                            <a href="javascript:void(0)" class="botao finalizar excluir inativo">Finalizar</a>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="fit">4</td>
-                        <td>Maria Maria Maria Maria</td>
-                        <td>Elielson Silveira Andrade</td>
-                        <td>Cardiologia</td>
-                        <td>01/05/2023</td>
-                        <td>13:30</td>
-                        <td>Agendado</td>
+                        <td class="fit">10/04/2023</td>
+                        <td class="fit">15:30</td>
+                        <td>Paciente D</td>
+                        <td>Profissional D</td>
+                        <td>Unidade D</td>
+                        <td></td>
+                        <td>
+                            <a href="javascript:void(0)" class="botao iniciar">Iniciar</a>
+                            <a href="javascript:void(0)" class="botao finalizar excluir inativo">Finalizar</a>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="fit">5</td>
-                        <td>Maria Maria Maria Maria</td>
-                        <td>Elielson Silveira Andrade</td>
-                        <td>Cardiologia</td>
-                        <td>01/05/2023</td>
-                        <td>13:30</td>
-                        <td>Agendado</td>
+                        <td class="fit">10/04/2023</td>
+                        <td class="fit">16:00</td>
+                        <td>Paciente E</td>
+                        <td>Profissional E</td>
+                        <td>Unidade E</td>
+                        <td></td>
+                        <td>
+                            <a href="javascript:void(0)" class="botao iniciar">Iniciar</a>
+                            <a href="javascript:void(0)" class="botao finalizar excluir inativo">Finalizar</a>
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="6">Total de registros: 5</td>
+                        <td colspan="7">Total de registros: 5</td>
                     </tr>
                 </tfoot>
             </table>
         </main>
-
         <footer>
             <span>SGCM - Sistema de Gerenciamento de Clínica Médica</span>
-            <span>Suporte Técnino: (99) 99999-9999 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
+            <span>Suporte técnico: (68) 5555-5555 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
         </footer>
-
     </body>
 </html>
-

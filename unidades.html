@@ -45,38 +45,34 @@
                 </li>
             </ul>
         </nav>
-
         <main>
-
             <form action="#" id="formCadastro">
-                <h2>Unidades</h2>
 
                 <div class="grid">
 
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" required>
 
-                    <label for="endereco">Endereço</label>
-                    <input type="text" name="endereco" id="endereco" required>
+                    <label for="cep">Endereço</label>
+                    <input type="text" name="endereco" id="endereco">
 
                 </div>
 
-                <input type="submit" value="Adicionar" class="botao">
-                <input type="button" value="Cancelar" id="cancelar" class="botao">
+                <input type="button" value="Cancelar">
+                <input type="submit" value="Salvar">
 
-                
             </form>
-
             <div id="comandos">
+                <a href="javascript:void(0)"
+                   id="add"
+                   class="botao">Adicionar</a>
                 <div>
                     <form action="">
                         <label for="busca">Busca</label>
                         <input type="search" name="busca" id="busca">
                     </form>
                 </div>
-                <a href="javascript:void(0)" id="add" class="botao">Adicionar</a>
             </div>
-
             <table>
                 <thead>
                     <tr>
@@ -89,8 +85,8 @@
                 <tbody>
                     <tr>
                         <td class="fit">1</td>
-                        <td>Centro Medico 1</td>
-                        <td>Rua Tal n°01, Bairro Tal, Rio Branco - AC</td>
+                        <td>Bela Vista</td>
+                        <td>Rua Independência, 56 - Conjunto Bela Vista</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
                             <a href="javascript:void(0)" class="botao excluir">Excluir</a>
@@ -98,8 +94,8 @@
                     </tr>
                     <tr>
                         <td class="fit">2</td>
-                        <td>Centro Medico 2</td>
-                        <td>Rua Tal n°01, Bairro Tal, Rio Branco - AC</td>
+                        <td>Bosque</td>
+                        <td>Rua Paulo VI, 100 - Bosque</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
                             <a href="javascript:void(0)" class="botao excluir">Excluir</a>
@@ -107,36 +103,24 @@
                     </tr>
                     <tr>
                         <td class="fit">3</td>
-                        <td>Centro Medico 3</td>
-                        <td>Rua Tal n°01, Bairro Tal, Rio Branco - AC</td>
+                        <td>Cruzeiro do Sul</td>
+                        <td>Rua Rui Barbosa, 252 - Centro</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
                             <a href="javascript:void(0)" class="botao excluir">Excluir</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="fit">4</td>
-                        <td>Centro Medico 4</td>
-                        <td>Rua Tal n°01, Bairro Tal, Rio Branco - AC</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-    
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4">Total de registros: 4</td>
+                        <td colspan="4">Total de registros: 3</td>
                     </tr>
                 </tfoot>
             </table>
         </main>
-
         <footer>
             <span>SGCM - Sistema de Gerenciamento de Clínica Médica</span>
-            <span>Suporte Técnino: (99) 99999-9999 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
+            <span>Suporte técnico: (68) 5555-5555 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
         </footer>
-
     </body>
 </html>

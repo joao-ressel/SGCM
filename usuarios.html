@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta name="viewport" content="width=device-width,user-scalable=no">
-        <title>SGCM - Profissionais</title>
+        <title>SGCM - Usuários</title>
         <link rel="stylesheet" href="estilo.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,8 +50,24 @@
 
                 <div class="grid">
 
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome">
+                    <label for="nomeCompleto">Nome</label>
+                    <input type="text" name="nomeCompleto">
+
+                    <label for="nomeUsuario">Usuário</label>
+                    <input type="text" name="nomeCompleto" required>
+
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" required>
+
+                    <label for="ativo">Ativo</label>
+                    <input type="checkbox" name="ativo">
+
+                    <label for="papel">Papel</label>
+                    <select name="papel" required>
+                        <option value=""></option>
+                        <option value="ATENDENTE">ATENDENTE</option>
+                        <option value="ADMIN">ADMIN</option>
+                    </select>
 
                 </div>
 
@@ -75,13 +91,19 @@
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
+                        <th>Usuário</th>
+                        <th>Ativo</th>
+                        <th>Papel</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="fit">1</td>
-                        <td>Oncologia</td>
+                        <td>Administrador</td>
+                        <td>admin</td>
+                        <td>Sim</td>
+                        <td>ADMIN</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
                             <a href="javascript:void(0)" class="botao excluir">Excluir</a>
@@ -89,7 +111,10 @@
                     </tr>
                     <tr>
                         <td class="fit">2</td>
-                        <td>Geriatria</td>
+                        <td>Daniel</td>
+                        <td>daniel</td>
+                        <td>Sim</td>
+                        <td>ADMIN</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
                             <a href="javascript:void(0)" class="botao excluir">Excluir</a>
@@ -97,7 +122,10 @@
                     </tr>
                     <tr>
                         <td class="fit">3</td>
-                        <td>Dermatologia</td>
+                        <td>Daricélio</td>
+                        <td>daricelio</td>
+                        <td>Sim</td>
+                        <td>USUARIO</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
                             <a href="javascript:void(0)" class="botao excluir">Excluir</a>
@@ -105,7 +133,10 @@
                     </tr>
                     <tr>
                         <td class="fit">4</td>
-                        <td>Cardiologia</td>
+                        <td>Laura</td>
+                        <td>laura</td>
+                        <td>Sim</td>
+                        <td>USUARIO</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
                             <a href="javascript:void(0)" class="botao excluir">Excluir</a>
@@ -113,16 +144,19 @@
                     </tr>
                     <tr>
                         <td class="fit">5</td>
-                        <td>Pediatria</td>
+                        <td>Paulo</td>
+                        <td>paulo</td>
+                        <td>Não</td>
+                        <td>USUARIO</td>
                         <td>
                             <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            <a href="javascript:void(0)" class="botao excluir desabilitado">Excluir</a>
                         </td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="3">Total de registros: 5</td>
+                        <td colspan="6">Total de registros: 5</td>
                     </tr>
                 </tfoot>
             </table>
