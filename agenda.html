@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="estilo.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="script.js" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -15,50 +16,61 @@
                 <img src="imagens/logo.png" alt="logo SGCM" width="50">
                 <span id="titulo">SGCM</span>
             </div>
-
-            <div id="usuarioInfo">
-                <span>Usuário: admin</span>
-                <span>Papel: Administrador</span>
-                <a href="javascript:void(0)" class="botao">Logout</a>
+            
+            <div class="user-header">
+                <div id="usuarioInfo">
+                    <span class="user-nome">João Carlos</span>
+                    <span class="user-papel">Admin</span>   
+                </div>
+                    <img src = "./imagens/icon-logout.png" alt="icone de logout" class="botao icone"/>
             </div>
             
         </header>
 
         <nav>
-            <ul>
+            <ul id="menu-principal">
                 <li><a href="agenda.html">Agenda</a></li>
                 <li><a href="atendimento.html">Atendimento</a></li>
                 <li><a href="pacientes.html">Pacientes</a></li>
                 <li><a href="profissionais.html">Profissionais</a></li>
                 <li><a href="convenios.html">Convênios</a></li>
                 <li id="dropdown">
-                    <a href="javascript:void(0)">Configurações
-                        <span>
-                            &#9660;
-                        </span>
+                    <a href="javascript:void(0)">
+                        Configurações
+                        <span>&#9660;</span>
                     </a>
                     <div id="dropdown_menu">
-                        <a href="usuarios.html">Usuários</a>
-                        <a href="especialidades.html">Especialidades</a>
                         <a href="unidades.html">Unidades</a>
+                        <a href="especialidades.html">Especialidades</a>
+                        <a href="usuarios.html">Usuários</a>
                     </div>
                 </li>
             </ul>
+            <form onchange="window.location.href = event.target.value;" id="mobile-menu-form">
+                <select name="mobile-menu" id="mobile-menu">
+                    <option value="#" disabled selected>&#9660; Menu</option>
+                    <optgroup class="acesso-rapido" label="Páginas">
+                        <option value="/agenda.html">Agenda</option>
+                        <option value="/atendimento.html">Atendimento</option>
+                        <option value="/pacientes.html">Pacientes</option>
+                        <option value="/profissionais.html">Profissionais</option>
+                        <option value="/convenios.html">Convênios</option>
+                    </optgroup>
+                    <optgroup class="configuracoes" label="Configurações">
+                        <option value="/unidades.html">Unidades</option>
+                        <option value="/especialidades.html">Especialidades</option>
+                        <option value="/usuarios.html">Usuários</option>
+                    </optgroup>
+    
+                    </optgroup>
+                </select>
+            </form>
         </nav>
         <main>
-            <form action="#" id="formCadastro">
-
+            <form action="#" id="formCadastro" class="inativo">
+                <h2>Agendadmento</h2>
                 <div class="grid">
 
-                    <label for="profissional">Profissional</label>
-                    <select name="profissional" id="profissional" required>
-                        <option value="">Selecione</option>
-                        <option value="1">Profissional A</option>
-                        <option value="2">Profissional B</option>
-                        <option value="3">Profissional C</option>
-                        <option value="4">Profissional D</option>
-                        <option value="5">Profissional E</option>
-                    </select>
 
                     <label for="data">Data</label>
                     <input type="date" name="data" id="data" required>
@@ -81,16 +93,6 @@
                         <option value="20:00">20:00</option>
                     </select>
 
-                    <label for="convenio">Convênio</label>
-                    <select name="convenio" id="convenio" required>
-                        <option value="">Selecione</option>
-                        <option value="1">Convênio A</option>
-                        <option value="2">Convênio B</option>
-                        <option value="3">Convênio C</option>
-                        <option value="4">Convênio D</option>
-                        <option value="5">Convênio E</option>
-                    </select>
-
                     <label for="paciente">Paciente</label>
                     <select name="paciente" id="paciente" required>
                         <option value="">Selecione</option>
@@ -101,113 +103,148 @@
                         <option value="5">Paciente E</option>
                     </select>
 
+                    <label for="profissional">Profissional</label>
+                    <select name="profissional" id="profissional" required>
+                        <option value="">Selecione</option>
+                        <option value="1">Profissional A</option>
+                        <option value="2">Profissional B</option>
+                        <option value="3">Profissional C</option>
+                        <option value="4">Profissional D</option>
+                        <option value="5">Profissional E</option>
+                    </select>
+
+                    <label for="unidade">Unidade</label>
+                    <select name="unidade" id="unidade" required>
+                        <option value="">Selecione</option>
+                        <option value="1">Unidade A</option>
+                        <option value="2">Unidade B</option>
+                        <option value="3">Unidade C</option>
+                        <option value="4">Unidade D</option>
+                        <option value="5">Unidade E</option>
+                    </select>
+
+                    <label for="convenio">Convênio</label>
+                    <select name="convenio" id="convenio" required>
+                        <option value="">Selecione</option>
+                        <option value="1">Convênio A</option>
+                        <option value="2">Convênio B</option>
+                        <option value="3">Convênio C</option>
+                        <option value="4">Convênio D</option>
+                        <option value="5">Convênio E</option>
+                    </select>
+
                 </div>
 
-                <input type="button" value="Cancelar">
-                <input type="submit" value="Salvar">
+                <input type="submit" value="Salvar" class="botao" id="salvar">
+                <input type="button" value="Cancelar" id="cancelar" class="botao">
 
             </form>
             <div id="comandos">
-                <a href="javascript:void(0)"
-                   id="add"
-                   class="botao">Adicionar</a>
-                <div>
+                <div class="pesquisa">
                     <form action="">
                         <label for="busca">Busca</label>
                         <input type="search" name="busca" id="busca">
                     </form>
                 </div>
+                <div class="botoes-comandos">
+                    <a href="javascript:void(0)" id="add" class="botao">Adicionar</a>
+                </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Hora</th>
-                        <th>Paciente</th>
-                        <th>Profissional</th>
-                        <th>Unidade</th>
-                        <th>Convênio</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="fit">10/04/2023</td>
-                        <td class="fit">14:00</td>
-                        <td>Paciente A</td>
-                        <td>Profissional A</td>
-                        <td>Unidade A</td>
-                        <td>Unimed</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao chegada inativo">Chegada</a>
-                            <a href="javascript:void(0)" class="botao confirmacao">Confirmar</a>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">10/04/2023</td>
-                        <td class="fit">14:30</td>
-                        <td>Paciente B</td>
-                        <td>Profissional B</td>
-                        <td>Unidade B</td>
-                        <td>Aliança</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao chegada inativo">Chegada</a>
-                            <a href="javascript:void(0)" class="botao confirmacao">Confirmar</a>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">10/04/2023</td>
-                        <td class="fit">15:00</td>
-                        <td>Paciente C</td>
-                        <td>Profissional C</td>
-                        <td>Unidade C</td>
-                        <td>Unimed</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao chegada inativo">Chegada</a>
-                            <a href="javascript:void(0)" class="botao confirmacao">Confirmar</a>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">10/04/2023</td>
-                        <td class="fit">15:30</td>
-                        <td>Paciente D</td>
-                        <td>Profissional D</td>
-                        <td>Unidade D</td>
-                        <td></td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao chegada">Chegada</a>
-                            <a href="javascript:void(0)" class="botao confirmacao inativo">Confirmar</a>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">10/04/2023</td>
-                        <td class="fit">16:00</td>
-                        <td>Paciente E</td>
-                        <td>Profissional E</td>
-                        <td>Unidade E</td>
-                        <td></td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao chegada inativo">Chegada</a>
-                            <a href="javascript:void(0)" class="botao confirmacao">Confirmar</a>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="7">Total de registros: 5</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="box-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Paciente</th>
+                            <th>Profissional</th>
+                            <th>Unidade</th>
+                            <th>Convênio</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fit">10/04/2023</td>
+                            <td class="fit">14:00</td>
+                            <td>Paciente A</td>
+                            <td>Profissional A</td>
+                            <td>Unidade A</td>
+                            <td>Unimed</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao chegada inativo">Chegada</a>
+                                <a href="javascript:void(0)" class="botao confirmacao">Confirmar</a>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">10/04/2023</td>
+                            <td class="fit">14:30</td>
+                            <td>Paciente B</td>
+                            <td>Profissional B</td>
+                            <td>Unidade B</td>
+                            <td>Aliança</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao chegada inativo">Chegada</a>
+                                <a href="javascript:void(0)" class="botao confirmacao">Confirmar</a>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">10/04/2023</td>
+                            <td class="fit">15:00</td>
+                            <td>Paciente C</td>
+                            <td>Profissional C</td>
+                            <td>Unidade C</td>
+                            <td>Unimed</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao chegada inativo">Chegada</a>
+                                <a href="javascript:void(0)" class="botao confirmacao">Confirmar</a>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">10/04/2023</td>
+                            <td class="fit">15:30</td>
+                            <td>Paciente D</td>
+                            <td>Profissional D</td>
+                            <td>Unidade D</td>
+                            <td>Aliança</td>
+                           
+                            <td>
+                                <a href="javascript:void(0)" class="botao chegada">Chegada</a>
+                                <a href="javascript:void(0)" class="botao confirmacao inativo">Confirmar</a>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">10/04/2023</td>
+                            <td class="fit">16:00</td>
+                            <td>Paciente E</td>
+                            <td>Profissional E</td>
+                            <td>Unidade E</td>
+                            <td>Unimed</td>
+                        
+                            <td>
+                                <a href="javascript:void(0)" class="botao chegada inativo">Chegada</a>
+                                <a href="javascript:void(0)" class="botao confirmacao">Confirmar</a>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Cancelar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">Total de registros: 5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
         </main>
         <footer>
             <span>SGCM - Sistema de Gerenciamento de Clínica Médica - By João Carlos Ressel</span>

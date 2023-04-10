@@ -1,119 +1,167 @@
-let botaoCarregar = document.querySelector("a#load");
+let botaoAdd = document.getElementById("add"); // Exibir form
 
-if(botaoCarregar) {
-    botaoCarregar.addEventListener("click", () => {
-        let tabela = document.querySelector("table");
-        let url = "http://my-json-server.typicode.com/danielnsilva/json/profissionais";
-        fetch(url)
-        .then(resposta => resposta.json())
-        .then(dados => {
-            for (const item of dados){
-                    let linha = document.createElement("tr");
-                    let id = document.createElement("td");
-                    let nome = document.createElement("td");
-                    let registro = document.createElement("td");
-                    let especialidade = document.createElement("td");
-                    let unidade = document.createElement("td");
-                    let telefone = document.createElement("td");
-                    let email = document.createElement("td");
-                    let acoes = document.createElement("td");
-                    id.classList.add("fit");
-                    id.textContent = item.id;
-                    nome.textContent = item.nome;
-                    registro.textContent = item.registro;
-                    especialidade.textContent = item.especialidade;
-                    unidade.textContent = item.unidade;
-                    telefone.textContent = item.telefone;
-                    email.textContent = item.email;
-                    acoes.innerHTML = `<a href="javascript:void(0)" class="botao">Editar</a>
-                    <a href="javascript:void(0)" class="botao excluir">Excluir</a>`;
-                    linha.appendChild(id);
-                    linha.appendChild(nome);
-                    linha.appendChild(registro);
-                    linha.appendChild(especialidade);
-                    linha.appendChild(unidade);
-                    linha.appendChild(telefone);
-                    linha.appendChild(email);
-                    linha.appendChild(acoes);
-                    tabela.tBodies[0].appendChild(linha);
-            }
-        }).catch((erro =>{
-            console.log(erro);
-        }));
-    });
+botaoAdd.addEventListener("click", () => {
+	document.getElementById("formCadastro").style.display = "block";
+});
+
+let botaoCancelar = document.querySelector('input[value="Cancelar"]'); // Cancelar form
+
+botaoCancelar.addEventListener("click", () => {
+	document.getElementById("formCadastro").style.display = "none";
+});
+
+let botoesExcluir = document.querySelectorAll("a.botao.excluir"); // Excluir linha
+
+function excluir(botao) {
+	botao.addEventListener("click", () => {
+		if (confirm("Deseja realmente excluir?")) {
+			botao.parentNode.parentNode.remove();
+			contadorRegistros();
+		}
+	});
 }
 
-let botaoSalvar = document.querySelector(".botao#salvar");
-
-if(botaoSalvar){
-    botaoSalvar.addEventListener("click", () => {
-        
-        let tabela = document.getElementById("tabela");
-        let linha = document.createElement("tr");   
-        let id = document.createElement("td");
-        let nome = document.createElement("td");
-        let registroConcelho = document.createElement("td");
-        let especialidade = document.createElement("td");
-        let unidade = document.createElement("td");
-        let telefone = document.createElement("td");
-        let email = document.createElement("td");
-        let acoes = document.createElement("td");
-
-        let cellId = document.querySelectorAll("tr").length - 1;
-        let cellNome = document.getElementById("nome").value;
-        let cellRegistroConcelho = document.getElementById("registroConcelho").value;
-        let cellEspecialidade = document.getElementById("especialidade").value;
-        let cellUnidade = document.getElementById("unidade").value;
-        let cellTelefone = document.getElementById("telefone").value;
-        let cellEmail = document.getElementById("email").value; 
-
-        id.innerHTML = cellId;
-        nome.innerHTML = cellNome;
-        registroConcelho.innerHTML = cellRegistroConcelho;
-        especialidade.innerHTML = cellEspecialidade;
-        unidade.innerHTML = cellUnidade;
-        telefone.innerHTML = cellTelefone;
-        email.innerHTML = cellEmail;
-        acoes.innerHTML = `<a href="javascript:void(0)" class="botao">Editar</a>
-        <a href="javascript:void(0)" class="botao excluir">Excluir</a>`;
-        
-        linha.appendChild(id);
-        linha.appendChild(nome);
-        linha.appendChild(registroConcelho);
-        linha.appendChild(especialidade);
-        linha.appendChild(unidade);
-        linha.appendChild(telefone);
-        linha.appendChild(email);
-        linha.appendChild(acoes);
-        tabela.tBodies[0].appendChild(linha);
-    })
+for (const botao of botoesExcluir) {
+	excluir(botao);
 }
 
-let botaoForm = document.querySelector("a#add");
+function adicionarLinhaTabela(tabela, dados, search = false) {
+	let linha = document.createElement("tr");
+	let id = document.createElement("td");
+	let acoes = document.createElement("td");
 
-if(botaoForm){
-    botaoForm.addEventListener("click", () => {
-        let formulario = document.querySelector('form');
-        formulario.style.display = 'block';
-    })
+	id.classList.add("fit");
+	id.textContent = tabela.rows.length - 1;
+	acoes.innerHTML = `<a href="javascript:void(0)" class="botao">Editar</a> <a href="javascript:void(0)" class="botao excluir">Excluir</a>`;
+
+	linha.appendChild(id);
+
+	let camposApular = ["id", "senha"];
+
+	for (const [chave, valor] of Object.entries(dados)) {
+		let celula = document.createElement("td");
+
+		if (camposApular.includes(chave.toLocaleLowerCase())) {
+			continue;
+		} else {
+			if (search)
+				celula.innerHTML = valor.replace(
+					new RegExp(inputBusca.value, "gi"),
+					(match) => `<mark>${match}</mark>`
+				);
+			else celula.textContent = valor;
+
+			linha.appendChild(celula);
+		}
+	}
+
+	linha.appendChild(acoes);
+
+	tabela.tBodies[0].appendChild(linha);
+
+	let botaoExcluir = linha.querySelector("a.botao.excluir");
+	excluir(botaoExcluir);
 }
 
-let botaoCancelar = document.querySelector(".botao#cancelar");
+//------------ Buscar dados na tabela ------------//
 
-if(botaoCancelar){
-    botaoCancelar.addEventListener("click", () => {
-        let formulario = document.querySelector('form');
-        formulario.style.display = 'none';
-    })
+let inputBusca = document.getElementById("busca");
+
+function buscar(pagina) {
+	inputBusca.addEventListener("input", () => {
+		const tabela = document.querySelector("table");
+		const url = "./dados.json";
+
+		fetch(url)
+			.then((resposta) => resposta.json())
+			.then((dados) => {
+				let busca = inputBusca.value.toLowerCase();
+
+				let resultado = dados[pagina].filter((item) => {
+					return Object.keys(item).some((key) => {
+						return String(item[key]).toLowerCase().includes(busca);
+					});
+				});
+
+				const rows = document.querySelectorAll("tbody tr");
+				rows.forEach((row) => row.remove());
+
+				if (resultado.length === 0) {
+					let linha = document.createElement("tr");
+					let celula = document.createElement("td");
+					celula.colSpan = tabela.rows[0].cells.length;
+					celula.style.textAlign = "center";
+					celula.textContent = "Nenhum resultado encontrado.";
+					linha.appendChild(celula);
+					tabela.tBodies[0].appendChild(linha);
+
+					contadorRegistros(true);
+				} else {
+					resultado.forEach((item) => {
+						adicionarLinhaTabela(tabela, item, true);
+					});
+
+					contadorRegistros();
+				}
+			})
+			.catch((erro) => {
+				console.log(erro);
+			});
+	});
 }
 
-let botoesExcluir = document.querySelectorAll("a.botao.excluir");
-console.log(botoesExcluir);
+let pagina = window.location.pathname.split("/").pop().split(".")[0];
+buscar(pagina);
 
-for (let botao of botoesExcluir) {
-    botao.addEventListener("click", () => {
-        if (confirm("Deseja realmente excluir?")) {
-            botao.parentNode.parentNode.remove();
-        }
-    });
+//------------ Fim ------------//
+
+function contadorRegistros(zero = false) {
+	const tabela = document.querySelector("table");
+	const registrosContador = document.querySelector("table tfoot tr td");
+	registrosContador.textContent = `Total de registros: ${tabela.rows.length - 2}`;
+	registrosContador.colSpan = tabela.rows[0].cells.length;
+
+	zero ? (registrosContador.textContent = "Total de registros: 0") : null;
 }
+
+//------------ Fim ------------//
+
+//------------ Salvar dados do form na tabela ------------//
+
+let botaoSalvar = document.querySelector('input[value="Salvar"]');
+
+botaoSalvar.addEventListener("click", (event) => {
+	event.preventDefault();
+
+	let tabela = document.querySelector("table");
+
+	let dados = {};
+
+	let form = document.querySelector("form#formCadastro");
+
+	let elementos = Array.from(form.elements);
+
+	for (const input of elementos) {
+		if (input.type === "checkbox") {
+			if (input.checked) {
+				dados[input.name] = input.value;
+			}
+		} else if (input.type === "radio") {
+			if (input.checked) {
+				dados[input.name] = input.value;
+			}
+		} else if (input.type === "select-one") {
+			dados[input.name] = input.options[input.selectedIndex].label;
+		} else if (input.type === "button" || input.type === "submit") {
+			continue;
+		} else {
+			dados[input.name] = input.value;
+		}
+	}
+
+	adicionarLinhaTabela(tabela, dados);
+	contadorRegistros();
+	form.reset();
+});
+
+//------------ Fim ------------//

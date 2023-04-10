@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <script src="script.js" defer></script>
         <meta name="viewport" content="width=device-width,user-scalable=no">
         <title>SGCM - Convênios</title>
         <link rel="stylesheet" href="estilo.css" type="text/css">
@@ -15,39 +16,59 @@
                 <img src="imagens/logo.png" alt="logo SGCM" width="50">
                 <span id="titulo">SGCM</span>
             </div>
-
-            <div id="usuarioInfo">
-                <span>Usuário: admin</span>
-                <span>Papel: Administrador</span>
-                <a href="javascript:void(0)" class="botao">Logout</a>
+            
+            <div class="user-header">
+                <div id="usuarioInfo">
+                    <span class="user-nome">João Carlos</span>
+                    <span class="user-papel">Admin</span>   
+                </div>
+                    <img src = "./imagens/icon-logout.png" alt="icone de logout" class="botao icone"/>
             </div>
             
         </header>
 
         <nav>
-            <ul>
+            <ul id="menu-principal">
                 <li><a href="agenda.html">Agenda</a></li>
                 <li><a href="atendimento.html">Atendimento</a></li>
                 <li><a href="pacientes.html">Pacientes</a></li>
                 <li><a href="profissionais.html">Profissionais</a></li>
                 <li><a href="convenios.html">Convênios</a></li>
                 <li id="dropdown">
-                    <a href="javascript:void(0)">Configurações
-                        <span>
-                            &#9660;
-                        </span>
+                    <a href="javascript:void(0)">
+                        Configurações
+                        <span>&#9660;</span>
                     </a>
                     <div id="dropdown_menu">
-                        <a href="usuarios.html">Usuários</a>
-                        <a href="especialidades.html">Especialidades</a>
                         <a href="unidades.html">Unidades</a>
+                        <a href="especialidades.html">Especialidades</a>
+                        <a href="usuarios.html">Usuários</a>
                     </div>
                 </li>
             </ul>
+            <form onchange="window.location.href = event.target.value;" id="mobile-menu-form">
+                <select name="mobile-menu" id="mobile-menu">
+                    <option value="#" disabled selected>&#9660; Menu</option>
+                    <optgroup class="acesso-rapido" label="Páginas">
+                        <option value="/agenda.html">Agenda</option>
+                        <option value="/atendimento.html">Atendimento</option>
+                        <option value="/pacientes.html">Pacientes</option>
+                        <option value="/profissionais.html">Profissionais</option>
+                        <option value="/convenios.html">Convênios</option>
+                    </optgroup>
+                    <optgroup class="configuracoes" label="Configurações">
+                        <option value="/unidades.html">Unidades</option>
+                        <option value="/especialidades.html">Especialidades</option>
+                        <option value="/usuarios.html">Usuários</option>
+                    </optgroup>
+    
+                    </optgroup>
+                </select>
+            </form>
         </nav>
         <main>
-            <form action="#" id="formCadastro">
-
+            <form action="#" id="formCadastro" class="inativo">
+                <h2>Cadastro de Convênios</h2>
                 <div class="grid">
 
                     <label for="nome">Nome</label>
@@ -68,90 +89,99 @@
                     <label for="telefone">Telefone</label>
                     <input type="text" name="telefone" id="telefone" required>
 
-                    <label for="ativo">Ativo</label>
-                    <input type="checkbox" name="ativo" id="ativo">
+                    <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" id="telefone">
+
+                <label for="especialidade">Ativo</label>
+                <select name="status" id="status" required>
+                    <option value=""></option>
+                    <option value="1">SIM</option>
+                    <option value="2">NÃO</option> </select>
 
                 </div>
 
-                <input type="button" value="Cancelar">
-                <input type="submit" value="Salvar">
+                <input type="submit" value="Salvar" class="botao" id="salvar">
+                <input type="button" value="Cancelar" id="cancelar" class="botao">
 
             </form>
             <div id="comandos">
-                <a href="javascript:void(0)"
-                   id="add"
-                   class="botao">Adicionar</a>
-                <div>
+                <div class="pesquisa">
                     <form action="">
                         <label for="busca">Busca</label>
                         <input type="search" name="busca" id="busca">
                     </form>
                 </div>
+                <div class="botoes-comandos">
+                    <a href="javascript:void(0)" id="add" class="botao">Adicionar</a>
+                </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Razão Social</th>
-                        <th>CNPJ</th>
-                        <th>Representante</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Ativo</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="fit">1</td>
-                        <td>Unimed</td>
-                        <td>Unimed Rio Branco Cooperativa de Trabalho Médico Ltda.</td>
-                        <td>46.560.030/0001-53</td>
-                        <td>Thayline Figueredo Vaz</td>
-                        <td>contato@unimedriobranco.com.br</td>
-                        <td>(68) 3668-1546</td>
-                        <td>Sim</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">2</td>
-                        <td>Amil</td>
-                        <td>AMIL ASSISTENCIA MEDICA INTERNACIONAL S.A.</td>
-                        <td>29.309.127/0001-79</td>
-                        <td>Davi Faria da Conceição</td>
-                        <td>contato@amil.com.br</td>
-                        <td>(11) 3279-3035</td>
-                        <td>Sim</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">3</td>
-                        <td>Bradesco</td>
-                        <td>BRADESCO SAUDE S.A.</td>
-                        <td>92.693.118/0001-60</td>
-                        <td>Leandra Paes dos Anjos</td>
-                        <td>contato@bradescosaude.com.br</td>
-                        <td>(21) 2503-0787</td>
-                        <td>Sim</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="9">Total de registros: 5</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="box-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Razão Social</th>
+                            <th>CNPJ</th>
+                            <th>Representante</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Ativo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fit">1</td>
+                            <td>Unimed</td>
+                            <td>Unimed Rio Branco Cooperativa de Trabalho Médico Ltda.</td>
+                            <td>46.560.030/0001-53</td>
+                            <td>Thayline Figueredo Vaz</td>
+                            <td>contato@unimedriobranco.com.br</td>
+                            <td>(68) 3668-1546</td>
+                            <td>Sim</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">2</td>
+                            <td>Amil</td>
+                            <td>AMIL ASSISTENCIA MEDICA INTERNACIONAL S.A.</td>
+                            <td>29.309.127/0001-79</td>
+                            <td>Davi Faria da Conceição</td>
+                            <td>contato@amil.com.br</td>
+                            <td>(11) 3279-3035</td>
+                            <td>Sim</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">3</td>
+                            <td>Bradesco</td>
+                            <td>BRADESCO SAUDE S.A.</td>
+                            <td>92.693.118/0001-60</td>
+                            <td>Leandra Paes dos Anjos</td>
+                            <td>contato@bradescosaude.com.br</td>
+                            <td>(21) 2503-0787</td>
+                            <td>Sim</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="9">Total de registros: 5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
         </main>
         <footer>
             <span>SGCM - Sistema de Gerenciamento de Clínica Médica - By João Carlos Ressel</span>

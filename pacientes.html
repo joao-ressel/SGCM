@@ -5,6 +5,7 @@
         <title>SGCM - Pacientes</title>
         <link rel="stylesheet" href="estilo.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <script src="script.js" defer></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
@@ -15,39 +16,59 @@
                 <img src="imagens/logo.png" alt="logo SGCM" width="50">
                 <span id="titulo">SGCM</span>
             </div>
-
-            <div id="usuarioInfo">
-                <span>Usuário: admin</span>
-                <span>Papel: Administrador</span>
-                <a href="javascript:void(0)" class="botao">Logout</a>
+            
+            <div class="user-header">
+                <div id="usuarioInfo">
+                    <span class="user-nome">João Carlos</span>
+                    <span class="user-papel">Admin</span>   
+                </div>
+                    <img src = "./imagens/icon-logout.png" alt="icone de logout" class="botao icone"/>
             </div>
             
         </header>
 
         <nav>
-            <ul>
+            <ul id="menu-principal">
                 <li><a href="agenda.html">Agenda</a></li>
                 <li><a href="atendimento.html">Atendimento</a></li>
                 <li><a href="pacientes.html">Pacientes</a></li>
                 <li><a href="profissionais.html">Profissionais</a></li>
                 <li><a href="convenios.html">Convênios</a></li>
                 <li id="dropdown">
-                    <a href="javascript:void(0)">Configurações
-                        <span>
-                            &#9660;
-                        </span>
+                    <a href="javascript:void(0)">
+                        Configurações
+                        <span>&#9660;</span>
                     </a>
                     <div id="dropdown_menu">
-                        <a href="usuarios.html">Usuários</a>
-                        <a href="especialidades.html">Especialidades</a>
                         <a href="unidades.html">Unidades</a>
+                        <a href="especialidades.html">Especialidades</a>
+                        <a href="usuarios.html">Usuários</a>
                     </div>
                 </li>
             </ul>
+            <form onchange="window.location.href = event.target.value;" id="mobile-menu-form">
+                <select name="mobile-menu" id="mobile-menu">
+                    <option value="#" disabled selected>&#9660; Menu</option>
+                    <optgroup class="acesso-rapido" label="Páginas">
+                        <option value="/agenda.html">Agenda</option>
+                        <option value="/atendimento.html">Atendimento</option>
+                        <option value="/pacientes.html">Pacientes</option>
+                        <option value="/profissionais.html">Profissionais</option>
+                        <option value="/convenios.html">Convênios</option>
+                    </optgroup>
+                    <optgroup class="configuracoes" label="Configurações">
+                        <option value="/unidades.html">Unidades</option>
+                        <option value="/especialidades.html">Especialidades</option>
+                        <option value="/usuarios.html">Usuários</option>
+                    </optgroup>
+    
+                    </optgroup>
+                </select>
+            </form>
         </nav>
         <main>
-            <form action="#" id="formCadastro">
-
+            <form action="#" id="formCadastro" class="inativo">
+                <h2>Cadastro de Pacientes</h2>
                 <div class="grid">
 
                     <label for="nome">Nome</label>
@@ -125,131 +146,133 @@
 
                 </div>
 
-                <input type="button" value="Cancelar">
-                <input type="submit" value="Salvar">
+                <input type="submit" value="Salvar" class="botao" id="salvar">
+                <input type="button" value="Cancelar" id="cancelar" class="botao">
 
             </form>
             <div id="comandos">
-                <a href="javascript:void(0)"
-                   id="add"
-                   class="botao">Adicionar</a>
-                <div>
+                <div class="pesquisa">
                     <form action="">
                         <label for="busca">Busca</label>
                         <input type="search" name="busca" id="busca">
                     </form>
                 </div>
+                <div class="botoes-comandos">
+                    <a href="javascript:void(0)" id="add" class="botao">Adicionar</a>
+                </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Data de nascimento</th>
-                        <th>Grupo Sanguíneo</th>
-                        <th>Sexo</th>
-                        <th>CEP</th>
-                        <th>Endereço</th>
-                        <th>Estado</th>
-                        <th>Cidade</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="fit">1</td>
-                        <td>Giulia Farias Bencatel</td>
-                        <td>giulia.bencatel@gmail.com</td>
-                        <td>(68) 98105-2583</td>
-                        <td>1945-09-28</td>
-                        <td>AB+</td>
-                        <td>F</td>
-                        <td>69903-134</td>
-                        <td>Rua Cedro, 100 - Parque dos Sabiás</td>
-                        <td>AC</td>
-                        <td>Rio Branco</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">2</td>
-                        <td>Wallace Macedo Inácio Soriano</td>
-                        <td>wallace.soriano@yahoo.com</td>
-                        <td>(68) 97431-7722</td>
-                        <td>1941-04-22</td>
-                        <td>B+</td>
-                        <td>M</td>
-                        <td>69901-884</td>
-                        <td>Travessa Mossoró, 90 - Vitória</td>
-                        <td>AC</td>
-                        <td>Rio Branco</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">3</td>
-                        <td>Helen Dutra Vilar</td>
-                        <td>helen.vilar@gmail.com</td>
-                        <td>(68) 99752-4954</td>
-                        <td>1997-06-05</td>
-                        <td>AB-</td>
-                        <td>F</td>
-                        <td>69909-060</td>
-                        <td>Rua Adelaide, 50 - Rosa Linda</td>
-                        <td>AC</td>
-                        <td>Rio Branco</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">4</td>
-                        <td>Jean Schuenck Amorin</td>
-                        <td>mario.branco@uol.com.br</td>
-                        <td>(68) 97120-8079</td>
-                        <td>2009-03-10</td>
-                        <td>O+</td>
-                        <td>M</td>
-                        <td>69911-262</td>
-                        <td>Rua Luiz Galvez, 200 - Conjunto Castelo Branco</td>
-                        <td>AC</td>
-                        <td>Rio Branco</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fit">5</td>
-                        <td>Lucilene Santos Lucas</td>
-                        <td>lucilene.lucas@gmail.com</td>
-                        <td>(68) 99384-3354</td>
-                        <td>1974-11-14</td>
-                        <td>A+</td>
-                        <td>F</td>
-                        <td>69980-970</td>
-                        <td>Rua Rego Barros, 427 - Centro</td>
-                        <td>AC</td>
-                        <td>Cruzeiro do Sul</td>
-                        <td>
-                            <a href="javascript:void(0)" class="botao">Editar</a>
-                            <a href="javascript:void(0)" class="botao excluir">Excluir</a>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="12">Total de registros: 5</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="box-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Data de nascimento</th>
+                            <th>Grupo Sanguíneo</th>
+                            <th>Sexo</th>
+                            <th>CEP</th>
+                            <th>Endereço</th>
+                            <th>Estado</th>
+                            <th>Cidade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fit">1</td>
+                            <td>Giulia Farias Bencatel</td>
+                            <td>giulia.bencatel@gmail.com</td>
+                            <td>(68) 98105-2583</td>
+                            <td>1945-09-28</td>
+                            <td>AB+</td>
+                            <td>F</td>
+                            <td>69903-134</td>
+                            <td>Rua Cedro, 100 - Parque dos Sabiás</td>
+                            <td>AC</td>
+                            <td>Rio Branco</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">2</td>
+                            <td>Wallace Macedo Inácio Soriano</td>
+                            <td>wallace.soriano@yahoo.com</td>
+                            <td>(68) 97431-7722</td>
+                            <td>1941-04-22</td>
+                            <td>B+</td>
+                            <td>M</td>
+                            <td>69901-884</td>
+                            <td>Travessa Mossoró, 90 - Vitória</td>
+                            <td>AC</td>
+                            <td>Rio Branco</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">3</td>
+                            <td>Helen Dutra Vilar</td>
+                            <td>helen.vilar@gmail.com</td>
+                            <td>(68) 99752-4954</td>
+                            <td>1997-06-05</td>
+                            <td>AB-</td>
+                            <td>F</td>
+                            <td>69909-060</td>
+                            <td>Rua Adelaide, 50 - Rosa Linda</td>
+                            <td>AC</td>
+                            <td>Rio Branco</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">4</td>
+                            <td>Jean Schuenck Amorin</td>
+                            <td>mario.branco@uol.com.br</td>
+                            <td>(68) 97120-8079</td>
+                            <td>2009-03-10</td>
+                            <td>O+</td>
+                            <td>M</td>
+                            <td>69911-262</td>
+                            <td>Rua Luiz Galvez, 200 - Conjunto Castelo Branco</td>
+                            <td>AC</td>
+                            <td>Rio Branco</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fit">5</td>
+                            <td>Lucilene Santos Lucas</td>
+                            <td>lucilene.lucas@gmail.com</td>
+                            <td>(68) 99384-3354</td>
+                            <td>1974-11-14</td>
+                            <td>A+</td>
+                            <td>F</td>
+                            <td>69980-970</td>
+                            <td>Rua Rego Barros, 427 - Centro</td>
+                            <td>AC</td>
+                            <td>Cruzeiro do Sul</td>
+                            <td>
+                                <a href="javascript:void(0)" class="botao">Editar</a>
+                                <a href="javascript:void(0)" class="botao excluir">Excluir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="12">Total de registros: 5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </main>
         <footer>
             <span>SGCM - Sistema de Gerenciamento de Clínica Médica - By João Carlos Ressel</span>

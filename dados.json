@@ -1,0 +1,330 @@
+{
+	"convenios": [
+		{
+			"ID": "1",
+			"Nome": "Maria Adelia Serravalle Bezerra",
+			"Razão Social": "RBO/AC 377",
+			"CNPJ": "569874123658",
+			"Representante": "UniMED",
+			"E-mail": "monique.nespoli@uol.com.br",
+			"Telefone": "(68) 98205-4704",
+			"Ativo": "SIM"
+		},
+		{
+			"ID": "2",
+			"Nome": "Elielson Silveira Andrade",
+			"Razão Social": "RBI/AC 455",
+			"CNPJ": "85478965412",
+			"Representante": "FAMACIA",
+			"E-mail": "elielson.andrade@gmail.com",
+			"Telefone": "(68) 98085-4910",
+			"Ativo": "NÃO"
+		},
+		{
+			"ID": "3",
+			"Nome": "Davi Jesus Mendes2",
+			"Razão Social": "RBI/AC 123",
+			"CNPJ": "002589987996",
+			"Representante": "UniMED",
+			"E-mail": "davi.mendes@yahoo.com",
+			"Telefone": "(68) 98408-5352",
+			"Ativo": "SIM"
+		},
+		{
+			"ID": "4",
+			"Nome": "Carla da Paixão Valle",
+			"Razão Social": "RBO/AC 234",
+			"CNPJ": "02356987452",
+			"Representante": "UniMED",
+			"E-mail": "carla.valle@gmail.com",
+			"Telefone": "(68) 98395-5604",
+			"Ativo": "SIM"
+		},
+		{
+			"ID": "5",
+			"Nome": "Neuza Biango Nobrega",
+			"Razão Social": "RBO/AC 232",
+			"CNPJ": "02365897452",
+			"Representante": "AMOR SAÚDE",
+			"E-mail": "neuza.nobrega@uol.com.br",
+			"Telefone": "(68) 98561-6622",
+			"Ativo": "SIM"
+		}
+	],
+
+	"profissionais": [
+		{
+			"id": 1,
+			"nome": "Maria Adelia Serravalle Bezerra",
+			"registro": "CRM/AC 377",
+			"especialidade": "Cardiologia",
+			"unidade": "Unidade A",
+			"telefone": "(68) 98205-4704",
+			"email": "monique.nespoli@uol.com.br"
+		},
+		{
+			"id": 2,
+			"nome": "Elielson Silveira Andrade",
+			"registro": "CRM/AC 455",
+			"especialidade": "Cardiologia",
+			"unidade": "Unidade B",
+			"telefone": "(68) 98085-4910",
+			"email": "elielson.andrade@gmail.com"
+		},
+		{
+			"id": 3,
+			"nome": "Davi Jesus Mendes",
+			"registro": "CRM/AC 123",
+			"especialidade": "Infectologia",
+			"unidade": "Unidade C",
+			"telefone": "(68) 98408-5352",
+			"email": "davi.mendes@yahoo.com"
+		},
+		{
+			"id": 4,
+			"nome": "Carla da Paixão Valle",
+			"registro": "CRM/AC 234",
+			"especialidade": "Dermatologia",
+			"unidade": "Unidade A",
+			"telefone": "(68) 98395-5604",
+			"email": "carla.valle@gmail.com"
+		},
+		{
+			"id": 5,
+			"nome": "Neuza Biango Nobrega",
+			"registro": "CRM/AC 232",
+			"especialidade": "Pediatria",
+			"unidade": "Unidade B",
+			"telefone": "(68) 98561-6622",
+			"email": "neuza.nobrega@uol.com.br"
+		}
+		
+	],
+	"unidades": [
+		{
+			"id": 1,
+			"nome": "Bela Vista",
+			"endereco": "Rua Independência, 56 - Conjunto Bela Vista"
+		},
+		{
+			"id": 2,
+			"nome": "Bosque",
+			"endereco": "Rua Paulo VI, 100 - Bosque"
+		},
+		{
+			"id": 3,
+			"nome": "Cruzeiro do Sul",
+			"endereco": "Rua Rui Barbosa, 252 - Centro"
+		}
+	],
+	"agenda": [
+		{
+			"Data": "10/04/2023",
+			"Hora": "14:00",
+			"Paciente": "Paciente A",
+			"Profissional": "Profissional A",
+			"Unidade": "Unidade A",
+			"Convênio": "Unimed"
+		},
+		{
+			"Data": "10/04/2023",
+			"Hora": "14:30",
+			"Paciente": "Paciente B",
+			"Profissional": "Profissional B",
+			"Unidade": "Unidade B",
+			"Convênio": "Aliança"
+		},
+		{
+			"Data": "10/04/2023",
+			"Hora": "15:00",
+			"Paciente": "Paciente C",
+			"Profissional": "Profissional C",
+			"Unidade": "Unidade C",
+			"Convênio": "Unimed"
+		},
+		{
+			"Data": "10/04/2023",
+			"Hora": "15:30",
+			"Paciente": "Paciente D",
+			"Profissional": "Profissional D",
+			"Unidade": "Unidade D",
+			"Convênio": "Aliança"
+		},
+		{
+			"Data": "10/04/2023",
+			"Hora": "16:00",
+			"Paciente": "Paciente E",
+			"Profissional": "Profissional E",
+			"Unidade": "Unidade E",
+			"Convênio": "Unimed"
+		}
+	],
+	"atendimento": [
+		{
+			"Data": "10/04/2023",
+			"Hora": "14:00",
+			"Paciente": "Paciente A",
+			"Profissional": "Profissional A",
+			"Unidade": "Unidade A",
+			"Convênio": "Unimed"
+		},
+		{
+			"Data": "10/04/2023",
+			"Hora": "14:30",
+			"Paciente": "Paciente B",
+			"Profissional": "Profissional B",
+			"Unidade": "Unidade B",
+			"Convênio": "Aliança"
+		},
+		{
+			"Data": "10/04/2023",
+			"Hora": "15:00",
+			"Paciente": "Paciente C",
+			"Profissional": "Profissional C",
+			"Unidade": "Unidade C",
+			"Convênio": "Unimed"
+		},
+		{
+			"Data": "10/04/2023",
+			"Hora": "15:30",
+			"Paciente": "Paciente D",
+			"Profissional": "Profissional D",
+			"Unidade": "Unidade D",
+			"Convênio": "Aliança"
+		},
+		{
+			"Data": "10/04/2023",
+			"Hora": "16:00",
+			"Paciente": "Paciente E",
+			"Profissional": "Profissional E",
+			"Unidade": "Unidade E",
+			"Convênio": "Unimed"
+		}
+	],
+	"especialidades": [
+		{
+			"id": 1,
+			"nome": "Oconlogia"
+		},
+		{
+			"id": 2,
+			"nome": "Geriatria"
+		},
+		{
+			"id": 3,
+			"nome": "Cardiologia"
+		},
+		{
+			"id": 4,
+			"nome": "Pediatria"
+		},
+		{
+			"id": 5,
+			"nome": "Odontologia"
+		}
+	],
+	"pacientes": [
+		{
+			"id": 1,
+			"nome": "Giulia Farias Bencatel",
+			"email": "giulia.bencatel@gmail.com",
+			"telefone": "(68) 98105-2583",
+			"dataNascimento": "1945-09-28",
+			"grupoSanguineo": "AB+",
+			"sexo": "F",
+			"CEP": "69903-134",
+			"endereco": "Rua Cedro, 100 - Parque dos Sabiás",
+			"estado": "AC",
+			"cidade": "Rio Branco"
+		},
+		{
+			"id": 2,
+			"nome": "Wallace Macedo Inácio Soriano",
+			"email": "wallace.soriano@yahoo.com",
+			"telefone": "(68) 97431-7722",
+			"dataNascimento": "1941-04-22",
+			"grupoSanguineo": "B+",
+			"sexo": "M",
+			"CEP": "69901-884",
+			"endereco": "Travessa Mossoró, 90 - Vitória",
+			"estado": "AC",
+			"cidade": "Rio Branco"
+		},
+		{
+			"id": 3,
+			"nome": "Helen Dutra Vilar",
+			"email": "helen.vilar@gmail.com",
+			"telefone": "(68) 99752-4954",
+			"dataNascimento": "1997-06-05",
+			"grupoSanguineo": "AB-",
+			"sexo": "F",
+			"CEP": "69909-060",
+			"endereco": "Rua Adelaide, 50 - Rosa Linda",
+			"estado": "AC",
+			"cidade": "Rio Branco"
+		},
+		{
+			"id": 4,
+			"nome": "Jean Schuenck Amorin",
+			"email": "mario.branco@uol.com.br",
+			"telefone": "(68) 97120-8079",
+			"dataNascimento": "2009-03-10",
+			"grupoSanguineo": "O+",
+			"sexo": "M",
+			"CEP": "69911-262",
+			"endereco": "Rua Luiz Galvez, 200 - Conjunto Castelo Branco",
+			"estado": "AC",
+			"cidade": "Rio Branco"
+		},
+		{
+			"id": 5,
+			"nome": "Lucilene Santos Lucas",
+			"email": "lucilene.lucas@gmail.com",
+			"telefone": "(68) 99384-3354",
+			"dataNascimento": "1974-11-14",
+			"grupoSanguineo": "A+",
+			"sexo": "F",
+			"CEP": "69980-970",
+			"endereco": "Rua Rego Barros, 427 - Centro",
+			"estado": "AC",
+			"cidade": "Cruzeiro do Sul"
+		}
+	],
+	"usuarios": [
+		{
+			"id": 1,
+			"nome": "Administrador",
+			"usuario": "admin",
+			"ativo": "Sim",
+			"papel": "ADMIN"
+		},
+		{
+			"id": 2,
+			"nome": "Daniel",
+			"usuario": "daniel",
+			"ativo": "Sim",
+			"papel": "ADMIN"
+		},
+		{
+			"id": 3,
+			"nome": "Daricélio",
+			"usuario": "daricelio",
+			"ativo": "Sim",
+			"papel": "USUARIO"
+		},
+		{
+			"id": 4,
+			"nome": "Laura",
+			"usuario": "laura",
+			"ativo": "Sim",
+			"papel": "USUARIO"
+		},
+		{
+			"id": 5,
+			"nome": "Paulo",
+			"usuario": "paulo",
+			"ativo": "Sim",
+			"papel": "USUARIO"
+		}
+	]
+}
