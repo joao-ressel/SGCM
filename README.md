@@ -1,2 +1,2 @@
 # SGCM
- Atividade de Fundamentos Front End
+Minha versão do sistema produzido nas aulas de Fundamentos Front-End, na Web Academy.
