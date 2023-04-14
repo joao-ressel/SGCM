@@ -1,0 +1,136 @@
+/* Header */
+header{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    padding-bottom: 0;
+    width: 100%;
+    margin-bottom: 1em;
+    
+}
+
+div#logo{
+    margin: auto 0;
+}
+
+div#logo img{
+    vertical-align: middle;
+    margin-left: 2em;
+}
+
+div#logo span{
+    font-size: 2em;
+    vertical-align: middle;
+    margin-left: 0.5em;
+    font-weight: 800;
+}
+
+div#usuarioInfo{
+    text-align: right;
+    justify-content: space-between;
+}
+
+div#usuarioInfo a.botao{
+    border: 1px solid white;
+    background-color:#2A5C72;
+}
+
+div#usuarioInfo{
+    display: inline-block;
+    margin-bottom: auto;
+}
+
+div#usuarioInfo span{
+    display: block;
+}
+
+div.user-header{
+    justify-content: end;
+    vertical-align: middle;
+    display:inline-block;
+    margin-bottom: 0;
+    margin-right: 2em;
+}
+
+div.user-header img{
+    margin-top: 1em;
+    margin-left: 0.5em;
+}
+
+.user-nome{
+    font-weight: 500;
+}
+
+.user-papel{
+    font-weight: 300;
+}
+
+.botao.icone{
+    width: 2em;
+    color: white;
+}
+
+/* NAV */
+nav{
+    margin: 0.5em;
+    background-color: #2A5C72;
+    margin: 0;
+    text-align: center;
+    border: none;
+
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    margin-top: 0.5em;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: inline-block;
+}
+
+nav ul li a:hover{
+    color: #9ccff1;
+}
+
+nav div#dropdown_menu{
+    display: none;
+    position: absolute;/*saindo da hierarquia deposição*/
+    background-color: #2A5C72;
+}
+
+nav ul li#dropdown:hover div#dropdown_menu{
+    display: block;
+}
+
+nav div#dropdown_menu a{
+    display: block;
+}
+nav{
+    border: none;
+}
+
+form.inativo {
+    display: none;
+}
+
+nav select#mobile-menu {
+    display: none;
+}
+
+form#mobile-menu-form {
+    width: 100%;
+    margin: 0;
+    border: 0;
+}
+
+ul#menu-principal {
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 0;
+    position: relative;
+}

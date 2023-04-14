@@ -4,17 +4,23 @@
         <script src="script.js" defer></script>
         <meta name="viewport" content="width=device-width,user-scalable=no">
         <title>SGCM - Convênios</title>
-        <link rel="stylesheet" href="estilo.css" type="text/css">
+        <link rel="stylesheet" href="/css/blocos-inicio.css" type="text/css">
+        <link rel="stylesheet" href="/css/botoes.css" type="text/css">
+        <link rel="stylesheet" href="/css/body.css" type="text/css">
+        <link rel="stylesheet" href="/css/formulario.css" type="text/css">
+        <link rel="stylesheet" href="/css/footer.css" type="text/css">
+        <link rel="stylesheet" href="/css/menu.css" type="text/css">
+        <link rel="stylesheet" href="/css/responsivo.css" type="text/css">
+        <link rel="stylesheet" href="/css/tabela.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
-
         <header>
             <div id="logo">
-                <img src="imagens/logo.png" alt="logo SGCM" width="50">
-                <span id="titulo">SGCM</span>
+                <img src="/imagens/logo.png" alt="logo SGCM" width="50">
+                <span id="titulo"><a href="/index.html">SGCM</a></span>
             </div>
             
             <div class="user-header">
@@ -22,27 +28,26 @@
                     <span class="user-nome">João Carlos</span>
                     <span class="user-papel">Admin</span>   
                 </div>
-                    <img src = "./imagens/icon-logout.png" alt="icone de logout" class="botao icone"/>
+                    <img src = "/imagens/icon-logout.png" alt="icone de logout" class="botao icone"/>
             </div>
             
         </header>
-
         <nav>
             <ul id="menu-principal">
-                <li><a href="agenda.html">Agenda</a></li>
-                <li><a href="atendimento.html">Atendimento</a></li>
-                <li><a href="pacientes.html">Pacientes</a></li>
-                <li><a href="profissionais.html">Profissionais</a></li>
-                <li><a href="convenios.html">Convênios</a></li>
+                <li><a href="paginas/agenda.html">Agenda</a></li>
+                <li><a href="paginas/atendimento.html">Atendimento</a></li>
+                <li><a href="paginas/pacientes.html">Pacientes</a></li>
+                <li><a href="paginas/profissionais.html">Profissionais</a></li>
+                <li><a href="paginas/convenios.html">Convênios</a></li>
                 <li id="dropdown">
                     <a href="javascript:void(0)">
                         Configurações
                         <span>&#9660;</span>
                     </a>
                     <div id="dropdown_menu">
-                        <a href="unidades.html">Unidades</a>
-                        <a href="especialidades.html">Especialidades</a>
-                        <a href="usuarios.html">Usuários</a>
+                        <a href="paginas/unidades.html">Unidades</a>
+                        <a href="paginas/especialidades.html">Especialidades</a>
+                        <a href="paginas/usuarios.html">Usuários</a>
                     </div>
                 </li>
             </ul>
@@ -50,16 +55,16 @@
                 <select name="mobile-menu" id="mobile-menu">
                     <option value="#" disabled selected>&#9660; Menu</option>
                     <optgroup class="acesso-rapido" label="Páginas">
-                        <option value="/agenda.html">Agenda</option>
-                        <option value="/atendimento.html">Atendimento</option>
-                        <option value="/pacientes.html">Pacientes</option>
-                        <option value="/profissionais.html">Profissionais</option>
-                        <option value="/convenios.html">Convênios</option>
+                        <option value="/paginas/agenda.html">Agenda</option>
+                        <option value="/paginas/atendimento.html">Atendimento</option>
+                        <option value="/paginas/pacientes.html">Pacientes</option>
+                        <option value="/paginas/profissionais.html">Profissionais</option>
+                        <option value="/paginas/convenios.html">Convênios</option>
                     </optgroup>
                     <optgroup class="configuracoes" label="Configurações">
-                        <option value="/unidades.html">Unidades</option>
-                        <option value="/especialidades.html">Especialidades</option>
-                        <option value="/usuarios.html">Usuários</option>
+                        <option value="/paginas/unidades.html">Unidades</option>
+                        <option value="/paginas/especialidades.html">Especialidades</option>
+                        <option value="/paginas/usuarios.html">Usuários</option>
                     </optgroup>
     
                     </optgroup>

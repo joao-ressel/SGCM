@@ -1,0 +1,19 @@
+/*
+Cores
+
+50a240 vd claro
+2a5521 vd escuro
+1e76b1 az claro
+114264 az escuro
+*/
+
+body{
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    position:relative;
+    font-family: 'Poppins', 'Helvetica', sans-serif;
+    height: 100vh;
+    background-color: #EEF5FF;
+    
+}

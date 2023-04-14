@@ -1,0 +1,162 @@
+@media screen and (max-width:1200px){
+    header{
+        position: relative;
+        margin: auto;
+    }
+    nav{
+        position:relative;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        border: none;
+        padding: 0;
+    }
+    .user-header{
+        margin-right: 2em;
+    }
+    
+}
+@media screen and (max-width: 800px){
+
+    form.inativo {
+        display: none;
+    }
+   
+    nav form#mobile-menu-form {
+        display: inline-block;
+    }
+
+    nav select#mobile-menu {
+        font-family: 'poppins';
+        display: inline-block;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius:0;
+        border: none;
+        outline: none;
+        padding: 0 0.5em;
+    }
+
+    #mobile-menu {
+        width: 100%;
+        background-color: #2A5C72;
+        color: white;
+    }
+
+    input[type="button"], input[type="submit"]{
+    width: 100%;
+    margin-top: 0.5em;
+    }
+
+    nav ul#menu-principal {
+        display: none;
+    }
+
+    div.box-tabela{
+        margin: 0.5em;
+        padding: 1em;
+    }
+
+    div#comandos {
+        flex-direction: column;
+        
+        
+        gap: 1em;
+    }
+
+    div#comandos a {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5em;
+    }
+
+    footer{
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+
+    div#logo {
+        width: 50%;
+        display: flex;
+        margin-left: 1em;
+        justify-content: left;
+        align-items: center;
+    }
+
+    div#logo img {
+        margin-left: 0;
+    }
+    
+    div#usuarioInfo {
+        width: 100%;
+        margin-top: 1em;
+        text-align: left;
+        display: inline-block;
+    }
+
+    div#usuarioInfo a.botao {
+        width: 100%;
+        text-align: center;
+    }
+
+    div#usuarioInfo {
+        border-right: none;
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    div.user-header {
+        align-items: center;
+        vertical-align: middle;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    div span.user-nome, div span.user-papel{
+        text-align: right;
+    }
+
+    form.inativo {
+        display: none;
+    }
+
+    form#formCadastro{
+        text-align: left;
+        width: 90%;
+    }
+
+    form div.grid {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    form div.grid input, form div.grid select, #dataNascimento{
+        width: 100%;
+    }
+
+}
+
+
+/* PARA IMPRIMIR*/
+@media print {
+    table th, input.botao, a.botao {
+        color: black;
+        
+    }
+    table th, table td{
+        border: 1px solid black;
+    }
+
+    header, nav, div#comandos{
+        display: none;
+    }
+}

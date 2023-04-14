@@ -1,0 +1,47 @@
+/*Tabela*/
+div.box-tabela{
+    width: 90%;
+    height: auto;
+    padding: 1em;
+    background: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    margin: 5em auto;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0.1em;
+    margin: 1em auto;    
+    /*Responsivo*/
+    display: block;
+    overflow-x: auto;
+}
+
+table tr, table td{
+    border: 0px;
+}
+
+table th{
+    background-color: #EEF5FF;
+    border-radius: 5px;
+    
+}
+
+table tr, table td{
+    padding: 0.5em;
+    text-align: center;
+}
+
+table tfoot td {
+    text-align: center;
+    /*background-color: #114264;
+    color: white;*/
+    border-top: 3px solid #2A5C72;
+}
+
+table tbody td:last-child, table tbody td.fit{
+    width: 1%;
+    white-space: nowrap;
+}

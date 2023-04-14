@@ -1,0 +1,93 @@
+/*Links e botões*/
+a.botao,
+input[type="button"],
+input[type="submit"] {
+    background-color: #50a240;
+    color: white;
+    font-weight: 600;
+    font-family: "poppins";
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+a.botao:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: #2a5521;
+}
+
+input, select, a.botao {
+    font-size: 1em;
+    height: 2em;
+}
+
+input[type="button"],
+input[type="submit"]{
+    height: 2em;
+}
+
+a.botao{
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+}
+
+a.excluir, #cancelar{
+    background-color: rgb(178, 0, 0);
+}
+a.botao#add, a.botao.azul{
+    background-color: #114264;
+}
+a.excluir:hover, #cancelar:hover{
+    background-color: rgb(115, 0, 0);
+}
+a.botao.confirmacao,
+a.botao.chegada,
+a.botao.iniciar,
+a.botao.finalizar {
+    width: 6.5em;
+}
+
+a.botao.confirmacao {
+    background-color: #f1ff70;
+    color:sienna;
+}
+
+a.botao.confirmacao:hover {
+    background-color: #d5ee31;
+    color:sienna;
+}
+
+a.botao.chegada {
+    background-color: #f5c62d;
+}
+
+a.botao.chegada:hover {
+    background-color: #b5a40f;
+}
+
+a.botao.inativo {
+    display: none;
+}
+
+a.botao.iniciar,
+a.botao.finalizar {
+    width: 5.5em;
+}
+
+
+/*Comandos*/
+
+div#comandos{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    margin-top: 1em;
+}
+
+div#comandos a{
+    margin: auto 0;
+}

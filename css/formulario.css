@@ -1,0 +1,49 @@
+/*Formulário*/
+
+form#formCadastro{
+    margin: auto;
+    width: fit-content;
+    text-align: right;
+}
+
+form h2{
+    text-align: center;
+    color: #2a5521;
+}
+
+form div.grid{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+form label::after{
+    content: ":";
+}
+
+form input, form select{
+    height: 2em;
+    border: 1px solid #757575;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form div.grid input,
+form div.grid select{
+    width: 18em;
+}
+
+input:invalid,
+select:invalid{
+    border: 1px solid red;
+}
+
+form div.grid input[type="date"] {
+    font-family: inherit;
+}
+
+form div.grid input[type="checkbox"] {
+    margin-left: 0;
+    width: 1.25em;
+}
